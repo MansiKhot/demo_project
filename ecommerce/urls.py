@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from shop101.views import test, products_list
+from shop101.views import test, products_list,show_product
 
 urlpatterns = [
     path('', products_list),
     path('test/', test),
     path('admin/', admin.site.urls),
+    path('product/<id>',show_product)
+    path('user/',include('django.contrib.auth.urls'))
 ]
